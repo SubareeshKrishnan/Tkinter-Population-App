@@ -4,6 +4,11 @@ from tkinter import *
 from tkinter import scrolledtext
 from tkinter import ttk
 
+root = Tk()
+root.title("World Population")
+root.iconbitmap('pop.ico')
+root.resizable(False, False)
+
 clink = {
 "China": "/world-population/china-population/",
 "India": "/world-population/india-population/",
@@ -242,12 +247,6 @@ clink = {
 "Holy See": "/world-population/holy-see-population/"
 }
 
-
-
-root = Tk()
-root.title("World Population")
-root.iconbitmap('pop.ico')
-root.resizable(False, False)
 country_frame = LabelFrame(root, text="World Population", padx=10, pady=10, font = ("Calibri", 13))
 country_frame.grid(row=0, column=0, padx=20, pady=5, columnspan=4)
 n = StringVar()
@@ -305,29 +304,7 @@ def searchcountry():
     popLabel=Label(country_frame, text=str(res), font = ("Calibri", 40))
     popLabel.grid(row=2, column=0, columnspan=4)
 
-
-
-
-
 searchBtn = Button(country_frame, text="Search", bg='black', fg='white', width = 13, font = ("Calibri", 11),command=searchcountry)
 searchBtn.grid(row = 1, column=0, columnspan=1,pady=10)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Label(root, text='Project by Subareesh', fg='red').grid(row=1, column=0, columnspan=4, pady=5)
 root.mainloop()
